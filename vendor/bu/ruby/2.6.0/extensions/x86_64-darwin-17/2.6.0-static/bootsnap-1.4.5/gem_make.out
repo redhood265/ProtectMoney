@@ -1,0 +1,15 @@
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bu/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191010-2204-g5upxa.rb extconf.rb
+creating Makefile
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bu/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bu/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bu/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20191010-2204-1tvckgn/bootsnap

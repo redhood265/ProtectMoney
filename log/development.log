@@ -1,0 +1,534 @@
+Started GET "/" for ::1 at 2019-10-10 10:59:35 +0900
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2098450092580557240)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20191009125113)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2098450092580557240)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (2.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "ProtectMoney_development"[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2098450092580557240)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20191009125113)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191009125113"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBuyItems (20191009125118)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "buy_items" ("id" bigserial primary key, "category_id" integer, "name" character varying, "price" integer, "approval" boolean, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191009125118"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-10 02:04:09.092141"], ["updated_at", "2019-10-10 02:04:09.092141"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2098450092580557240)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-10-10 11:04:48 +0900
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (1.5ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:24
+  Rendered buy_items/index.slim within layouts/application (Duration: 20.4ms | Allocations: 15562)
+Completed 200 OK in 2022ms (Views: 1995.5ms | ActiveRecord: 4.4ms | Allocations: 1538846)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-10 14:55:40 +0900
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (4.9ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:24
+  Rendered buy_items/index.slim within layouts/application (Duration: 28.0ms | Allocations: 15422)
+Completed 200 OK in 1280ms (Views: 1254.5ms | ActiveRecord: 6.4ms | Allocations: 1519998)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:07:41 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.8ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:24
+  Rendered buy_items/index.slim within layouts/application (Duration: 6.1ms | Allocations: 7838)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 1.2ms | Allocations: 24368)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:07:43 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 172.4ms | Allocations: 97145)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.0ms | Allocations: 97782)
+
+
+  
+ActionView::Template::Error (undefined method `fomr_with' for #<#<Class:0x00007f90c2d71608>:0x00007f90c131b538>
+Did you mean?  form_with):
+    1: h1 新規作成
+    2: 
+    3: - fomr_with(model: BuyItem, local: true) do |item|
+    4:   .form-group
+    5:     = item.label :name
+    6:     = item.text_field
+  
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:07:58 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 148.5ms | Allocations: 96772)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.0ms | Allocations: 98013)
+
+
+  
+ActionView::Template::Error (undefined method `fomr_with' for #<#<Class:0x00007f90c2b51468>:0x00007f90c2b5bbc0>
+Did you mean?  form_with):
+    1: h1 新規作成
+    2: 
+    3: - fomr_with model: BuyItem, local: true do |item|
+    4:   .form-group
+    5:     = item.label :name
+    6:     = item.text_field
+  
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:08:10 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 56.9ms | Allocations: 7591)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms | Allocations: 8830)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    3: - form_with model: BuyItem, local: true do |item|
+    4:   .form-group
+    5:     = item.label :name
+    6:     = item.text_field
+    7:   .form-group
+    8:     = item.label :price
+    9:     = item.text_field
+  
+app/views/buy_items/new.slim:6
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:08:32 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 33.2ms | Allocations: 14122)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.1ms | Allocations: 15358)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for #<Class:0x00007f90c2d6a5b0>):
+     8:     = item.label :price
+     9:     = item.text_field :price
+    10: 
+    11:   = item.submit
+  
+app/views/buy_items/new.slim:11
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:08:55 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 10.4ms | Allocations: 6323)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7559)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for #<Class:0x00007f90c2d6a5b0>):
+     8:     = item.label :price
+     9:     = item.text_field :price
+    10: 
+    11:   = item.submit nil
+  
+app/views/buy_items/new.slim:11
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:10:14 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 10.4ms | Allocations: 6350)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7589)
+
+
+  
+ActionView::Template::Error (undefined method `persisted?' for #<Class:0x00007f90c2d6a5b0>):
+     8:     = item.label :price
+     9:     = item.text_field :price, class: 'form-control'
+    10: 
+    11:   = item.submit nil, class: 'btn btn-primary'
+  
+app/views/buy_items/new.slim:11
+app/views/buy_items/new.slim:3
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:11:39 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 3.5ms | Allocations: 5309)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 21097)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:12:10 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 1.2ms | Allocations: 2369)
+Completed 200 OK in 26ms (Views: 10.8ms | ActiveRecord: 7.9ms | Allocations: 20012)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:15:00 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 3.7ms | Allocations: 3829)
+Completed 200 OK in 27ms (Views: 17.4ms | ActiveRecord: 2.5ms | Allocations: 24545)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:17:52 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 3.4ms | Allocations: 3704)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 2.3ms | Allocations: 24382)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:18:51 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 5.0ms | Allocations: 3666)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 19462)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:18:58 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 1.6ms | Allocations: 745)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 12931)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:20:58 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 1.3ms | Allocations: 837)
+Completed 200 OK in 21ms (Views: 11.6ms | ActiveRecord: 2.4ms | Allocations: 18063)
+
+
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:21:03 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 738)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/buy_items_controller.rb:11:in `create'
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:21:23 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.0ms | Allocations: 5627)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/buy_items_controller.rb:11:in `create'
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:21:26 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 728)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/buy_items_controller.rb:11:in `create'
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:28:24 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1208)
+
+
+  
+NoMethodError (undefined method `save' for #<ActionController::Parameters:0x00007f90c286bf78>):
+  
+app/controllers/buy_items_controller.rb:14:in `create'
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:28:42 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1249)
+
+
+  
+NoMethodError (undefined method `create' for #<ActionController::Parameters:0x00007f90b9610e80>):
+  
+app/controllers/buy_items_controller.rb:14:in `create'
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:29:09 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCEDAiUBZdqVehiGX9nFgXet4ShQqMVjbmAYi27S08h+l7xFqwY4oQr3GrXa2PAhRZ9FjWcLyz7Lh6NKrYMy1A==", "buy_item"=>{"name"=>"aaaa", "price"=>"100"}, "commit"=>"Create Buy item"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/buy_items_controller.rb:14:in `create'
+  [1m[36mBuyItem Create (2.6ms)[0m  [1m[32mINSERT INTO "buy_items" ("name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "aaaa"], ["price", 100], ["created_at", "2019-10-10 06:29:09.069040"], ["updated_at", "2019-10-10 06:29:09.069040"]]
+  ↳ app/controllers/buy_items_controller.rb:14:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/buy_items_controller.rb:14:in `create'
+Redirected to http://localhost:3000/buy_items
+Completed 302 Found in 24ms (ActiveRecord: 13.1ms | Allocations: 7804)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-10-10 15:29:09 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (2.6ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 22.9ms | Allocations: 8633)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.9ms | Allocations: 9425)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:29:40 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 13.7ms | Allocations: 6167)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.1ms | Allocations: 7555)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:30:02 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.4ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 17.0ms | Allocations: 12447)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 5.1ms | Allocations: 14466)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (3.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "家電"], ["created_at", "2019-10-10 06:30:42.036544"], ["updated_at", "2019-10-10 06:30:42.036544"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ゲーム"], ["created_at", "2019-10-10 06:30:42.043870"], ["updated_at", "2019-10-10 06:30:42.043870"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuyItem Create (0.8ms)[0m  [1m[32mINSERT INTO "buy_items" ("category_id", "name", "price", "approval", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category_id", 1], ["name", "電子レンジ_テスト"], ["price", 24000], ["approval", true], ["created_at", "2019-10-10 06:30:42.053826"], ["updated_at", "2019-10-10 06:30:42.053826"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuyItem Create (0.2ms)[0m  [1m[32mINSERT INTO "buy_items" ("category_id", "name", "price", "approval", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category_id", 1], ["name", "洗濯機_テスト"], ["price", 30000], ["approval", false], ["created_at", "2019-10-10 06:30:42.057523"], ["updated_at", "2019-10-10 06:30:42.057523"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuyItem Create (0.2ms)[0m  [1m[32mINSERT INTO "buy_items" ("category_id", "name", "price", "approval", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category_id", 2], ["name", "KH_テスト"], ["price", 7800], ["approval", true], ["created_at", "2019-10-10 06:30:42.060278"], ["updated_at", "2019-10-10 06:30:42.060278"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:30:56 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 1.6ms | Allocations: 1545)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 2045)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:31:00 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 1.5ms | Allocations: 1545)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 2044)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:33:41 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  Rendered buy_items/index.slim within layouts/application (Duration: 16.5ms | Allocations: 12476)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.7ms | Allocations: 14455)
+
+
+  
+ActionView::Template::Error (Couldn't find Category without an ID):
+    12:   tbody
+    13:     - @buy_items.each do |item|
+    14:       tr
+    15:         td = Category.find(item.category_id).name
+    16:         td = item.name
+    17:         td = item.price
+    18:         td = item.approval
+  
+app/views/buy_items/index.slim:15
+app/views/buy_items/index.slim:13
+Started GET "/" for 127.0.0.1 at 2019-10-10 15:38:21 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:24
+  Rendered buy_items/index.slim within layouts/application (Duration: 12.8ms | Allocations: 11955)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 2.6ms | Allocations: 27745)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-10-10 15:40:17 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  Rendered buy_items/new.slim within layouts/application (Duration: 7.1ms | Allocations: 4799)
+Completed 200 OK in 35ms (Views: 19.3ms | ActiveRecord: 8.4ms | Allocations: 25599)
+
+
+Started POST "/buy_items" for 127.0.0.1 at 2019-10-10 15:40:26 +0900
+Processing by BuyItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NxNQNZkNMw18sOzoaMi/97Eo2zjQsH30x3rZ+BusppoIrPvUe6Ci9iHQ2eGq45KrXEj5feUiU7fdzmRYcbgU4A==", "buy_item"=>{"category_id"=>"2", "name"=>"MHW", "price"=>"3000"}, "commit"=>"Create Buy item"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/buy_items_controller.rb:12:in `create'
+  [1m[36mBuyItem Create (1.0ms)[0m  [1m[32mINSERT INTO "buy_items" ("category_id", "name", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["name", "MHW"], ["price", 3000], ["created_at", "2019-10-10 06:40:26.841683"], ["updated_at", "2019-10-10 06:40:26.841683"]]
+  ↳ app/controllers/buy_items_controller.rb:12:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/buy_items_controller.rb:12:in `create'
+Redirected to http://localhost:3000/buy_items
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms | Allocations: 2640)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-10-10 15:40:26 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.8ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:13
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:15
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items"[0m
+  ↳ app/views/buy_items/index.slim:24
+  Rendered buy_items/index.slim within layouts/application (Duration: 18.5ms | Allocations: 12915)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 4.5ms | Allocations: 25238)
+
+

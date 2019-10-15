@@ -1,0 +1,14 @@
+h1 新規作成
+
+= form_with model: @buy_item, local: true do |item|
+  .form-group
+    = item.label :category_id
+    = item.select :category_id, Category.category_list, {}, class: 'form-control'
+  .form-group
+    = item.label :name
+    = item.text_field :name, class: 'form-control'
+  .form-group
+    = item.label :price
+    = item.text_field :price, class: 'form-control'
+
+  = item.submit '作成', class: 'btn btn-primary'

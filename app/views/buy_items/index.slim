@@ -1,0 +1,26 @@
+strong
+ = Date.today.strftime("%Y/%m")
+
+.mb-3
+table.table
+  thead.thead-default
+    tr
+      th カテゴリ
+      th 項目名
+      th 金額
+      th 承認
+  tbody
+    - @buy_items.each do |item|
+      tr
+        td = Category.find(item.category_id).name ||= ""
+        td = item.name
+        td = item.price
+        td = (item.approval ? "OK" : "NG")
+
+table
+  thead
+    tr
+      th 合計金額
+      th = BuyItem.approval_sum
+
+= link_to "新規作成", new_buy_item_path, class: 'btn btn-primary'
