@@ -1,26 +1,38 @@
-strong
- = Date.today.strftime("%Y/%m")
 
-.mb-3
-table.table
-  thead.thead-default
-    tr
-      th カテゴリ
-      th 項目名
-      th 金額
-      th 承認
-  tbody
-    - @buy_items.each do |item|
-      tr
-        td = Category.find(item.category_id).name ||= ""
-        td = item.name
-        td = item.price
-        td = (item.approval ? "OK" : "NG")
+.m-md-3
+  - if flash[:error]
+    .flash
+      = flash[:error]
 
-table
-  thead
-    tr
-      th 合計金額
-      th = BuyItem.approval_sum
+- @buy_items_hash.each_value do |item|
+  strong
+    = item.first.created_at.strftime("%Y/%m")
 
-= link_to "新規作成", new_buy_item_path, class: 'btn btn-primary'
+  div.money_table
+    .mb-3
+    table.table
+      thead.thead-default
+        tr
+          th カテゴリ
+          th 項目名
+          th 金額
+          th 承認
+      tbody
+        - item.each do |val|
+          tr
+            td = Category.find(val.category_id).name ||= ""
+            td = val.name
+            td = val.price
+            td = (val.approval ? "OK" : "NG")
+
+    table
+      thead
+        tr
+          th 合計金額
+          th = item.sum(:price)
+
+.m-md-3
+  .m-md-3
+    = link_to "新規作成", new_buy_item_path, class: 'btn btn-primary'
+  .m-md-3
+    = link_to "データログ一覧", log_cat_buy_items_path, class: 'btn btn-info'

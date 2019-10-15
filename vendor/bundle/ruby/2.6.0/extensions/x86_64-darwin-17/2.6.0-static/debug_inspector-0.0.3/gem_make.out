@@ -1,0 +1,15 @@
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191015-1727-1ytoven.rb extconf.rb
+creating Makefile
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20191015-1727-wm0jry

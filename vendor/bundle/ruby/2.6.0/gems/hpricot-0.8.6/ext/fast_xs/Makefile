@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/atsushi/.rbenv/versions/2.6.0/include/ruby-2.6.0
+topdir = /Users/bps_saito/.rbenv/versions/2.6.0/include/ruby-2.6.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/atsushi/.rbenv/versions/2.6.0/include/ruby-2.6.0/x86_64-darwin18
+arch_hdrdir = /Users/bps_saito/.rbenv/versions/2.6.0/include/ruby-2.6.0/x86_64-darwin17
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/atsushi/.rbenv/versions/2.6.0
+prefix = $(DESTDIR)/Users/bps_saito/.rbenv/versions/2.6.0
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20191009-1609-1m14qxb
-sitelibdir = $(DESTDIR)./.gem.20191009-1609-1m14qxb
+sitearchdir = $(DESTDIR)./.gem.20191015-1727-deypwy
+sitelibdir = $(DESTDIR)./.gem.20191015-1727-deypwy
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -64,7 +64,7 @@ archdir = $(rubyarchdir)
 
 
 CC_WRAPPER = 
-CC = clang
+CC = $(CC_WRAPPER) clang
 CXX = clang++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
@@ -86,10 +86,10 @@ CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_STDIO_H -I/Users/atsushi/.rbenv/versions/2.6.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_STDIO_H -I/Users/bps_saito/.rbenv/versions/2.6.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/Users/atsushi/.rbenv/versions/2.6.0/lib  -fstack-protector-strong -L/usr/local/lib
-dldflags = -L/Users/atsushi/.rbenv/versions/2.6.0/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
+ldflags  = -L. -L/Users/bps_saito/.rbenv/versions/2.6.0/lib  -fstack-protector-strong -L/usr/local/lib
+dldflags = -L/Users/bps_saito/.rbenv/versions/2.6.0/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
@@ -104,7 +104,7 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = x86_64-darwin18
+arch = x86_64-darwin17
 sitearch = $(arch)
 ruby_version = 2.6.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
