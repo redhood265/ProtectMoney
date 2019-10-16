@@ -1,7 +1,4 @@
-// Place all the styles related to the BuyItems controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
+/* 一覧画面用 */
 
 //一覧画面のエラーメッセージ
 .flash {
@@ -12,14 +9,15 @@
 //一覧画面のボタン領域
 .index_btn_area {
   text-align: right;
-  .btn{
+
+  .btn {
     margin: 1em;
   }
 }
 
 //一覧画面の年月表示領域
 .buy_month_area {
-  margin: 1em 1em 1em 0em;
+  margin: 1em 1em 0.5em 0em;
 }
 
 //一覧画面の購入履歴表示領域
@@ -28,8 +26,11 @@
   margin-bottom: 1.5em;
 }
 
-//一覧画面の合計金額出力行
-.price_sum_area{
-  
-  color: red;
+/* 新規画面用 */
+
+.new_btn_area {
+  text-align: right;
+  .btn {
+    margin: 1em;
+  }
 }
