@@ -47,6 +47,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'rails-i18n'
 ```
 
 ### そのアプリケーションの中だけにインストール(bundle install)
@@ -105,7 +106,6 @@ ___
 
 #### Markdown
 
-- Auto-Open Markdown Preview
 - markdownlint
 - Markdown All in One
 
@@ -113,6 +113,10 @@ ___
 
 - Slim
 - Slim Lint
+
+### カラーテーマ
+
+- Noctis
 
 #### psqlのコマンド
 

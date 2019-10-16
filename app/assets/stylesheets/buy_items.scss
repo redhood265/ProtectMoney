@@ -3,11 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.money_table {
-  border: 1px #000 solid;
-}
-
-.flash{
+//一覧画面のエラーメッセージ
+.flash {
   color: red;
   font-weight: bold;
+}
+
+//一覧画面のボタン領域
+.index_btn_area {
+  text-align: right;
+  .btn{
+    margin: 1em;
+  }
+}
+
+//一覧画面の年月表示領域
+.buy_month_area {
+  margin: 1em 1em 1em 0em;
+}
+
+//一覧画面の購入履歴表示領域
+.buy_item_table {
+  border: 1px #000 solid;
+  margin-bottom: 1.5em;
+}
+
+//一覧画面の合計金額出力行
+.price_sum_area{
+  
+  color: red;
 }
