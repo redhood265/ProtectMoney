@@ -1,9 +1,9 @@
 class BuyItemsController < ApplicationController
   def index
     #今月/前月/前々月のデータ取得
-    start_month = 2.months.ago.all_month
-    end_month = Time.current.all_month
-    BuyItem.where(approval: true, created_at: start_month..end_month)
+    start_month = 2.months.ago.all_month.first
+    end_month = Time.current.all_month.last
+    @buy_items_ary = BuyItem.where(approval: true, created_at: start_month..end_month).to_a
   end
 
   def new

@@ -1,5 +1,5 @@
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
-/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191009-1609-1rsrjjj.rb extconf.rb
+/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191016-2415-15yhygv.rb extconf.rb
 creating Makefile
 
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
@@ -72,4 +72,4 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20191009-1609-ozi5dn/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20191016-2415-1lsjxpe/sassc

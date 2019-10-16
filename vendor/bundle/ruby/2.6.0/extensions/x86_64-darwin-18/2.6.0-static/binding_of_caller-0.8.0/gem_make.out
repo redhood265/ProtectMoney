@@ -1,5 +1,5 @@
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
-/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191009-1609-9jneai.rb extconf.rb
+/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191016-2415-so5hgi.rb extconf.rb
 
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
 make "DESTDIR=" clean

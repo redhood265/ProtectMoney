@@ -1,5 +1,5 @@
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
-/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191009-1609-1sp9xqi.rb extconf.rb
+/Users/atsushi/.rbenv/versions/2.6.0/bin/ruby -I /Users/atsushi/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191016-2415-ao1bt8.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for sys/select.h... yes
@@ -253,4 +253,4 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/atsushi/Programming/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20191009-1609-1ewdjww
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20191016-2415-o13e62
