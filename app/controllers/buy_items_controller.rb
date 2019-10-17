@@ -33,10 +33,8 @@ class BuyItemsController < ApplicationController
   end
 
   def log_cat
-    @buy_items = BuyItem.all
-    if params[:buy_item].blank?
-      
-    end
+    @ransack_result = BuyItem.ransack(params[:q])
+    @buy_items = @ransack_result.result(distinct: true)
   end
 
 end
