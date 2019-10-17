@@ -1,9 +1,20 @@
 class BuyItemsController < ApplicationController
+
   def index
     #今月/前月/前々月のデータ取得
-    start_month = 2.months.ago.all_month.first
-    end_month = Time.current.all_month.last
-    @buy_items_ary = BuyItem.where(approval: true, created_at: start_month..end_month).to_a
+    month_hash = {
+      this_month: Time.current.all_month, 
+      one_month_ago: 1.months.ago.all_month, 
+      two_month_ago: 2.months.ago.all_month
+    }
+
+    @buy_items_hash = {}
+    month_hash.each do |key, value|
+      @buy_items_hash[key] = BuyItem.where(approval: true, created_at: value)
+    end
+
+    logger.debug(@buy_items_hash)
+
   end
 
   def new
