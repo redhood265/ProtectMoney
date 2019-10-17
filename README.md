@@ -51,6 +51,7 @@ gem 'html2slim'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'ransack'
 ```
 
 ### そのアプリケーションの中だけにインストール(bundle install)
