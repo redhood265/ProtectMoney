@@ -98,7 +98,10 @@ rails db:migrate
 ### Railsサーバ起動
 
 ```rails
+#デフォルトポート(3000番)
 rails s
+#ポート指定(3030番ポート)
+rails s -p 3030
 ```
 
 ___
