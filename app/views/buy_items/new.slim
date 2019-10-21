@@ -2,13 +2,13 @@ h1 新規作成
 
 = form_with model: @buy_item, local: true do |item|
   .form-group
-    = item.label :category_id
+    = item.label :category_id, "カテゴリ"
     = item.select :category_id, Category.category_list, {}, class: 'form-control'
   .form-group
-    = item.label :name
+    = item.label :name, "項目名"
     = item.text_field :name, class: 'form-control'
   .form-group
-    = item.label :price
+    = item.label :price, "金額"
     = item.text_field :price, class: 'form-control'
 
   div.new_btn_area
