@@ -1,5 +1,10 @@
 class BuyItem < ApplicationRecord
 
+  #一覧表示
+  scope :by_month_buy,-> (month) {
+    where(approval: true, created_at: month)
+  }
+
   #購入可能かどうかを判定
   scope :buy_approval, -> (category) { 
     where(

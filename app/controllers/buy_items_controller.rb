@@ -10,7 +10,7 @@ class BuyItemsController < ApplicationController
 
     @buy_items_hash = {}
     month_hash.each do |key, value|
-      @buy_items_hash[key] = BuyItem.where(approval: true, created_at: value)
+      @buy_items_hash[key] = BuyItem.by_month_buy(value)
     end
   end
 
@@ -22,11 +22,10 @@ class BuyItemsController < ApplicationController
       if BuyItem.buy_approval(params[:buy_item][:category_id]).blank?
           buy_item = params.require(:buy_item).permit(:category_id, :name, :price)
           BuyItem.create(buy_item)
-          redirect_to buy_items_path
       else
           flash[:error] = "該当カテゴリは、今月既に購入済みです。"
-          redirect_to buy_items_path
       end
+      redirect_to buy_items_path
   end
 
   #ログ表示画面
