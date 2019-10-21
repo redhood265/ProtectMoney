@@ -18,16 +18,14 @@ div.index_btn_area
         tr
           th カテゴリ
           th 項目名
-          th 承認
           th 金額
       tbody
         - item.each do |val|
           tr
             td = Category.find(val.category_id).name ||= ""
             td = val.name
-            td = (val.approval ? "OK" : "NG")
             td = val.price
 
         tr style="font-weight: bold;"
-            td colspan=3 style="text-align: rigth;" 合計金額
+            td colspan=2 style="text-align: rigth;" 合計金額
             td = item.sum(:price)
