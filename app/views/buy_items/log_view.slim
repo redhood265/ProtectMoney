@@ -7,7 +7,7 @@
     = item.label 'カテゴリ'
     = item.select :category_id_cont, Category.category_list, {}, class: 'form-control'
 
-= link_to "検索", log_cat_buy_items_path, class: 'btn btn-secondary'
+= link_to "検索", log_view_buy_items_path, class: 'btn btn-primary'
 
 hr
 

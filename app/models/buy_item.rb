@@ -9,4 +9,11 @@ class BuyItem < ApplicationRecord
       )
   }
 
+  #チャート表示用にデータ取得
+  scope :chart_scope, -> { 
+    select("to_char(created_at, 'yyyy-mm') as buy_month, sum(price) as month_price")
+    .where(approval: true)
+    .order("buy_month")
+    .group("buy_month")
+  }
 end

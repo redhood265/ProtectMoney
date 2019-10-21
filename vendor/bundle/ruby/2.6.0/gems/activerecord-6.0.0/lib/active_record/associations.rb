@@ -1671,7 +1671,7 @@ module ActiveRecord
         # but it in fact generates a join table name of "paper_boxes_papers". Be aware of this caveat, and use the
         # custom <tt>:join_table</tt> option if you need to.
         # If your tables share a common prefix, it will only appear once at the beginning. For example,
-        # the tables "catalog_categories" and "catalog_products" generate a join table name of "catalog_categories_products".
+        # the tables "catalog_viewegories" and "catalog_products" generate a join table name of "catalog_viewegories_products".
         #
         # The join table should not have a primary key or a model associated with it. You must manually generate the
         # join table with a migration such as this:

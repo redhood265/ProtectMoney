@@ -12,9 +12,6 @@ class BuyItemsController < ApplicationController
     month_hash.each do |key, value|
       @buy_items_hash[key] = BuyItem.where(approval: true, created_at: value)
     end
-
-    logger.debug(@buy_items_hash)
-
   end
 
   def new
@@ -32,9 +29,15 @@ class BuyItemsController < ApplicationController
       end
   end
 
-  def log_cat
+  #ログ表示画面
+  def log_view
     @ransack_result = BuyItem.ransack(params[:q])
     @buy_items = @ransack_result.result(distinct: true)
+  end
+
+  #チャート表示画面
+  def chart_view
+    @chart_data = BuyItem.chart_scope.map {|item| [item.buy_month, item.month_price]}
   end
 
 end

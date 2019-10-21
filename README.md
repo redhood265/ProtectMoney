@@ -30,6 +30,14 @@
 
 - BOTを利用して、LINE通知で承認したデータを通知及び月末にその月の利用金額を通知
 
+### グラフ表示対応
+
+- 利用技術候補
+  - chartkick
+  - chart.js
+  - D3.js
+- ログ画面 or 一覧画面に設ける
+
 ## 搭載機能一覧
 
 - [x] 一覧画面
@@ -62,6 +70,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'ransack'
+gem 'chartkick'
 ```
 
 ### そのアプリケーションの中だけにインストール(bundle install)
@@ -180,3 +189,5 @@ bundle list
 
 - Rila6でのメール送信
 - LINEBotとRailsを組み合わせる
+- チャート表示のネタ(棒グラフだけで良い。Rails6で実装したことに意味がある)
+- chartkickの各オプション適用時のグラフィックを用いて記事化
