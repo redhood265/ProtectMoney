@@ -4,7 +4,6 @@ class BuyItem < ApplicationRecord
 
   MAX_PRICE = 300000.freeze
   validates :price, numericality: {only_interger: true, greater_than: MAX_PRICE}
-  validates :category_id uniqueness: {scope: :created_at}
 
   #一覧表示
   scope :by_month_buy,-> (month) {
