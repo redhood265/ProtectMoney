@@ -2,6 +2,10 @@
   .flash
     = flash[:error]
 
+p ほげほげ　ふがふが
+p
+  = react_component "HelloWorld", greeting: "Hello from react-rails."
+
 div.index_btn_area
   = link_to "新規作成", new_buy_item_path, class: 'btn btn-primary btn-lg'
   = link_to "ログ一覧", log_view_buy_items_path, class: 'btn btn-info btn-lg'
