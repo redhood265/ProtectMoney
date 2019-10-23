@@ -7,7 +7,7 @@ class HelloWorld extends React.Component {
     return (
       <React.Fragment>
         Reactコンポーネントの出力　Greeting: {this.props.greeting}
-        <Button>Material-ui_Core_Button</Button>
+        <Button variant="contained" color="primary">Material-ui_Core_Button</Button>
       </React.Fragment>
     );
   }
