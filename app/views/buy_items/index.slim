@@ -2,22 +2,26 @@
   .flash
     = flash[:error]
 
-p
-  = react_component "HelloWorld", greeting: "Hello from react-rails."
+/* react_railsを利用したフロント */
+= react_component "IndexButtons"
 
-div.index_btn_area
-  = link_to "新規作成", new_buy_item_path, class: 'btn btn-primary btn-lg'
-  = link_to "ログ一覧", log_view_buy_items_path, class: 'btn btn-info btn-lg'
-  = link_to "チャート一覧", chart_view_buy_items_path, class: 'btn btn-secondary btn-lg'
 
-- @buy_items_hash.each_value do |item|
+
+
+/* bootstrapを利用したフロント記述 */
+/div.index_btn_area
+  = link_to "新規作成", new_buy_item_path, class: ''
+  = link_to "ログ一覧", log_view_buy_items_path, class: ''
+  = link_to "チャート一覧", chart_view_buy_items_path, class: ''
+
+/- @buy_items_hash.each_value do |item|
   div.buy_month_area
     strong
       = item.first.created_at.strftime("%Y/%m")
 
-  div.buy_item_table
-    table.table
-      thead.thead-default
+/  div.buy_item_table
+    table
+      thead
         tr
           th カテゴリ
           th 項目名
@@ -29,6 +33,6 @@ div.index_btn_area
             td = val.name
             td = val.price
 
-        tr style="font-weight: bold;"
-            td colspan=2 style="text-align: rigth;" 合計金額
-            td = item.sum(:price)
+/        tr style="font-weight: bold;"
+          td colspan=2 style="text-align: rigth;" 合計金額
+          td = item.sum(:price)

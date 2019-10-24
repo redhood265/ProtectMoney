@@ -1,13 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Button from '@material-ui/core/Button'
+import { PaperSheet } from './kami'
 
 class HelloWorld extends React.Component {
-  render () {
+  render() {
     return (
       <React.Fragment>
+        {PaperSheet()}
+        {/*
         Reactコンポーネントの出力　Greeting: {this.props.greeting}
-        <Button variant="contained" color="primary">Material-ui_Core_Button</Button>
+        */}
+        <Button variant="contained" color="primary">Material-UI</Button>
       </React.Fragment>
     );
   }
