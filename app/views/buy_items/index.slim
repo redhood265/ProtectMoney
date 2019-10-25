@@ -3,12 +3,7 @@
     = flash[:error]
 
 /* react_railsを利用したフロント */
-/= react_component "IndexButtons"
-/= react_component "ContainedButtons"
-div#root
-/= react_component "Test"
-
-
+= react_component "HelloWorld", greeting: "Moudamepo"
 
 /* bootstrapを利用したフロント記述 */
 /div.index_btn_area

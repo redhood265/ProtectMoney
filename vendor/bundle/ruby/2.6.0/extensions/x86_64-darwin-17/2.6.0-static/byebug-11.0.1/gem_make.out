@@ -1,5 +1,5 @@
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
-/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191023-3589-1qmwplb.rb extconf.rb
+/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191025-19022-10xeo73.rb extconf.rb
 creating Makefile
 
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
@@ -16,4 +16,4 @@ linking shared-object byebug/byebug.bundle
 
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20191023-3589-1bzo9sr/byebug
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20191025-19022-x6el38/byebug

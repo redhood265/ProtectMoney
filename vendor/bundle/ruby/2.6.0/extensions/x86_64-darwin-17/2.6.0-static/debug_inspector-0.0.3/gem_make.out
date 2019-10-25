@@ -1,5 +1,5 @@
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
-/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191023-3589-5lms1o.rb extconf.rb
+/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191025-19022-8zzffu.rb extconf.rb
 creating Makefile
 
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
@@ -12,4 +12,4 @@ linking shared-object debug_inspector.bundle
 
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20191023-3589-1wwks3g
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20191025-19022-jn762n
