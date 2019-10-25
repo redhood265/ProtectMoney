@@ -19,3 +19,5 @@ bundle install --path vendor/bundle
 
 - rails generate rspec:install
 - bundle exec spring binstub rspec
+
+yarn add styled-components
