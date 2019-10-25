@@ -3,7 +3,10 @@
     = flash[:error]
 
 /* react_railsを利用したフロント */
-= react_component "HelloWorld", greeting: "Moudamepo"
+/= react_component "HelloWorld", greeting: "Moudamepo"
+
+/= react_component "Buy_Table"
+= react_component "Buy_Table", buy_ary: @buy_items_ary
 
 /* bootstrapを利用したフロント記述 */
 /div.index_btn_area
