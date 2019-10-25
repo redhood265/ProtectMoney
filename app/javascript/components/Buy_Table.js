@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 });
 
 function createData(category_name, name, price) {
-  return { category_name, name, price };
+  return { category_name:category_name, name:name, price:price };
 }
 
 const rows = [
@@ -46,9 +46,9 @@ function SimplTable() {
         <TableBody>
           {rows.map(row => (
             <TableRow key={row.name}>
-              {/*<TableCell component="th" scope="row">
+              <TableCell component="th" scope="row">
                 {row.name}
-          </TableCell>*/}
+          </TableCell>
               <TableCell align="right">{row.category_name}</TableCell>
               <TableCell align="right">{row.name}</TableCell>
               <TableCell align="right">{row.price}</TableCell>
@@ -64,7 +64,9 @@ export default class Buy_Table extends React.Component {
   render() {
     console.log("Webコンソールへの出力：" + this.props.buy_ary)
     for (var i of this.props.buy_ary) {
-      console.log("forの出力：" + i[0] + i[1] + i[2])
+      rows.push(createData(i[0], i[1], i[2]))
+      console.log("createDataの出力：" + createData(i[0], i[1], i[2]))
+      // console.log("forの出力：" + rows)
     }
 
     return (
