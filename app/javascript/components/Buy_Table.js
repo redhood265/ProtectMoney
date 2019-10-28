@@ -24,6 +24,12 @@ function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
 }
 
+function price_sum(tmp) {
+  for (var i of this.props.buy_ary) {
+    rows.push(createData(i[0], i[1], i[2]))
+  }
+}
+
 function SimplTable() {
   const classes = useStyles();
   return (
@@ -49,7 +55,7 @@ function SimplTable() {
           ))}
           <TableRow bgcolor="#fff0f5">
             <TableCell colspan="2" align="center">合計金額</TableCell>
-            <TableCell align="center">¥9999</TableCell>
+            <TableCell align="center">9999</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -62,6 +68,7 @@ export default class Buy_Table extends React.Component {
     for (var i of this.props.buy_ary) {
       rows.push(createData(i[0], i[1], i[2]))
     }
+    price_sum(this.props.buy_ary)
 
     return (
       <React.Fragment>
