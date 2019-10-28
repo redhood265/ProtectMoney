@@ -19,17 +19,10 @@ const useStyles = makeStyles({
   },
 });
 
+var rows = []
 function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
 }
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0),
-  createData('Ice cream sandwich', 237, 9.0),
-  createData('Eclair', 262, 16.0),
-  createData('Cupcake', 305, 3.7),
-  createData('Gingerbread', 356, 16.0),
-];
 
 function SimplTable() {
   const classes = useStyles();
@@ -37,23 +30,27 @@ function SimplTable() {
     <Paper className={classes.root}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
+          201909
+        </TableHead>
+        <TableHead>
           <TableRow>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="center">カテゴリ名</TableCell>
+            <TableCell align="center">商品名</TableCell>
+            <TableCell align="center">金額</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-          </TableCell>
-              <TableCell align="right">{row.category_name}</TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
+              <TableCell align="center">{row.category_name}</TableCell>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.price}</TableCell>
             </TableRow>
           ))}
+          <TableRow bgcolor="#fff0f5">
+            <TableCell colspan="2" align="center">合計金額</TableCell>
+            <TableCell align="center">¥9999</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Paper>
@@ -62,11 +59,8 @@ function SimplTable() {
 
 export default class Buy_Table extends React.Component {
   render() {
-    console.log("Webコンソールへの出力：" + this.props.buy_ary)
     for (var i of this.props.buy_ary) {
       rows.push(createData(i[0], i[1], i[2]))
-      console.log("createDataの出力：" + createData(i[0], i[1], i[2]))
-      // console.log("forの出力：" + rows)
     }
 
     return (
