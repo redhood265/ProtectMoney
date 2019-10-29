@@ -24,10 +24,13 @@ function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
 }
 
+var sum_rows = [-1]
 function price_sum(tmp) {
-  for (var i of this.props.buy_ary) {
-    rows.push(createData(i[0], i[1], i[2]))
+  var tmp_num = 0
+  for (var i of tmp) {
+    tmp_num = tmp_num + parseInt(i.price)
   }
+  sum_rows[0] = tmp_num
 }
 
 function SimplTable() {
@@ -39,7 +42,7 @@ function SimplTable() {
           201909
         </TableHead>
         <TableHead>
-          <TableRow>
+          <TableRow bgcolor="#fff0f5">
             <TableCell align="center">カテゴリ名</TableCell>
             <TableCell align="center">商品名</TableCell>
             <TableCell align="center">金額</TableCell>
@@ -53,9 +56,9 @@ function SimplTable() {
               <TableCell align="center">{row.price}</TableCell>
             </TableRow>
           ))}
-          <TableRow bgcolor="#fff0f5">
+          <TableRow>
             <TableCell colspan="2" align="center">合計金額</TableCell>
-            <TableCell align="center">9999</TableCell>
+            <TableCell align="center">{sum_rows[0]}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -68,7 +71,7 @@ export default class Buy_Table extends React.Component {
     for (var i of this.props.buy_ary) {
       rows.push(createData(i[0], i[1], i[2]))
     }
-    price_sum(this.props.buy_ary)
+    price_sum(rows)
 
     return (
       <React.Fragment>
