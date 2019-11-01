@@ -1,13 +1,14 @@
 class BuyItem < ApplicationRecord
-
-  has_many :category
+  #has_many :category
 
   MAX_PRICE = 300000.freeze
-  validates :price, numericality: {only_interger: true, greater_than: MAX_PRICE}
+  validates :price, numericality: {only_interger: true, less_than: MAX_PRICE}
+
+  validates :name, uniqueness: true
 
   #一覧表示
   scope :by_month_buy,-> (month) {
-    where(approval: true, created_at: month)
+    where(approval: true, created_at: month)#.pluck(:category_id, :name, :price)
   }
 
   #購入可能かどうかを判定
@@ -20,7 +21,7 @@ class BuyItem < ApplicationRecord
   }
 
   #チャート表示用にデータ取得
-  scope :chart_scope, -> {
+  scope :total_amount_of_month, -> {
     select("to_char(created_at, 'yyyy-mm') as buy_month, sum(price) as month_price")
     .where(approval: true)
     .order("buy_month")

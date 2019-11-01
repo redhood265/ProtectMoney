@@ -24,23 +24,17 @@ function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
 }
 
-var sum_rows = [-1]
-function price_sum(tmp) {
-  var tmp_num = 0
-  for (var i of tmp) {
-    tmp_num = tmp_num + parseInt(i.price)
-  }
-  sum_rows[0] = tmp_num
-}
-
-function SimplTable() {
+function SimplTable(val) {
   const classes = useStyles();
+  console.log(val)
   return (
     <Paper className={classes.root}>
       <Table className={classes.table} aria-label="simple table">
+
         <TableHead>
-          201909
+          {month_ary.buy_month }
         </TableHead>
+
         <TableHead>
           <TableRow bgcolor="#fff0f5">
             <TableCell align="center">カテゴリ名</TableCell>
@@ -48,7 +42,9 @@ function SimplTable() {
             <TableCell align="center">金額</TableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
+          <Tb_td />
           {rows.map(row => (
             <TableRow key={row.name}>
               <TableCell align="center">{row.category_name}</TableCell>
@@ -57,9 +53,10 @@ function SimplTable() {
             </TableRow>
           ))}
           <TableRow>
-            <TableCell colspan="2" align="center">合計金額</TableCell>
-            <TableCell align="center">{sum_rows[0]}</TableCell>
+            <TableCell colSpan="2" align="center">合計金額</TableCell>
+            <TableCell align="center">{month_ary.month_price}</TableCell>
           </TableRow>
+
         </TableBody>
       </Table>
     </Paper>
@@ -68,15 +65,24 @@ function SimplTable() {
 
 export default class Buy_Table extends React.Component {
   render() {
-    for (var i of this.props.buy_ary) {
-      rows.push(createData(i[0], i[1], i[2]))
-    }
-    price_sum(rows)
+    var buy_ary = this.props.buy_ary
+    var sum_ary = this.props.sum_ary
+    var mount_key = this.props.mount_key
+    
+    mount_key.forEach((key) => {
+      buy_ary[key].forEach((val) => {
+        //console.log(val)
+      })
+
+      for(var num in sum_ary[key]) {
+        console.log(num.buy_month)
+      }
+    })
 
     return (
       <React.Fragment>
         <Container maxWidth="lg">
-          <SimplTable />
+          {/*<SimplTable val={this.props} />*/}
         </Container>
       </React.Fragment>
     );

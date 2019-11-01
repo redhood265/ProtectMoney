@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.new(name: "家電").save
-Category.new(name: "ゲーム").save
+Category.create!(name: "家電")
+Category.create!(name: "ゲーム")
 
-BuyItem.new(category_id: 1, name: "電子レンジ_テスト", price: 24000, approval: true).save
-BuyItem.new(category_id: 1, name: "洗濯機_テスト", price: 30000, approval: false).save
-BuyItem.new(category_id: 2, name: "KH_テスト", price: 7800, approval: true).save
+this_month = [
+  {category_id: 1, name: "電子レンジ_テスト", price: 24000, approval: true},
+  {category_id: 1, name: "洗濯機_テスト", price: 30000, approval: false},
+  {category_id: 2, name: "KH_テスト", price: 7800, approval: true}
+]
 
 one_month = [
   {category_id: 1, name: "ガスコンロ_テスト", price: 44000, approval: true},
@@ -25,14 +27,17 @@ two_month = [
   {category_id: 2, name: "MTG_テスト", price: 1200, approval: true}
 ]
 
+this_month.each do |tmp|
+  #作成日を修正する必要がない
+  BuyItem.create!(category_id: tmp[:category_id], name: tmp[:name], price: tmp[:price], approval: tmp[:approval])
+end
+
 one_month.each do |tmp|
-  one_month_before = BuyItem.new(category_id: tmp[:category_id], name: tmp[:name], price: tmp[:price], approval: tmp[:approval])
-  one_month_before.created_at = 1.months.ago
-  one_month_before.save
+  # # 作成日を1ヶ月前に指定
+  BuyItem.create!(category_id: tmp[:category_id], name: tmp[:name], price: tmp[:price], approval: tmp[:approval], created_at: 1.months.ago)
 end
 
 two_month.each do |tmp|
-  two_month_before = BuyItem.new(category_id: tmp[:category_id], name: tmp[:name], price: tmp[:price], approval: tmp[:approval])
-  two_month_before.created_at = 2.months.ago
-  two_month_before.save
+  # 作成日を2ヶ月前に指定
+  BuyItem.create!(category_id: tmp[:category_id], name: tmp[:name], price: tmp[:price], approval: tmp[:approval], created_at: 2.months.ago)
 end

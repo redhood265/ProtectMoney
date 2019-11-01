@@ -6,7 +6,7 @@
 /= react_component "HelloWorld", greeting: "Moudamepo"
 
 /= react_component "Buy_Table"
-= react_component "Buy_Table", buy_ary: @buy_items_ary
+= react_component "Buy_Table", buy_ary: @buy_items_ary, sum_ary: @total_amount_of_month_ary, mount_key: @month_hash_key
 
 /* bootstrapを利用したフロント記述 */
 /div.index_btn_area
