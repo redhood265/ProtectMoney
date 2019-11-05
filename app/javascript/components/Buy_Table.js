@@ -20,8 +20,13 @@ const useStyles = makeStyles({
 });
 
 var rows = []
+var month_ary = []
 function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
+}
+
+function SimplTable_td(val) {
+
 }
 
 function SimplTable(val) {
@@ -44,7 +49,6 @@ function SimplTable(val) {
         </TableHead>
 
         <TableBody>
-          <Tb_td />
           {rows.map(row => (
             <TableRow key={row.name}>
               <TableCell align="center">{row.category_name}</TableCell>
@@ -82,7 +86,7 @@ export default class Buy_Table extends React.Component {
     return (
       <React.Fragment>
         <Container maxWidth="lg">
-          {/*<SimplTable val={this.props} />*/}
+          {<SimplTable val={this.props} />}
         </Container>
       </React.Fragment>
     );
