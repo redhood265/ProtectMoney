@@ -81,8 +81,8 @@ function createData(category_name, name, price) {
 
 function ListDataView(props) {
 
-  // console.log("this.props => ")
-  // console.log(this.props.month_hash_key)
+  console.log("this.props => ")
+  console.log(props.month_hash_key)
 
   // リスト
   const listItems = props.month_hash_key.map((number) =>
