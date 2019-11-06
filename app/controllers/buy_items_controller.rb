@@ -5,34 +5,26 @@ class BuyItemsController < ApplicationController
   TWO_MONTH_AGO = 'two_month_ago'
 
   def index
+    # React側での利用のみ
     @month_hash_key = [THIS_MONTH, ONE_MONTH_AGO, TWO_MONTH_AGO]
 
     #今月/前月/前々月のデータ取得
     month_hash_key_value = {
-      THIS_MONTH: Time.current.all_month, 
-      ONE_MONTH_AGO: 1.months.ago.all_month, 
-      TWO_MONTH_AGO: 2.months.ago.all_month
+      this_month: Time.current.all_month,
+      one_month_ago: 1.months.ago.all_month,
+      two_month_ago: 2.months.ago.all_month
     }
 
     @buy_items_ary = {}
     month_hash_key_value.each_key { |key|
-      @buy_items_ary[key] = BuyItem.by_month_buy(month_hash_key_value[key])
+      @buy_items_ary[key] = BuyItem.by_month_buy(month_hash_key_value[key]).to_a
     }
 
-    BuyItem.total_amount_of_month.each do |tmp|
-      #logger.debug(tmp.buy_month)
-      #logger.debug(tmp.month_price)
-    end
+    logger.debug("<---------------")
+    logger.debug(@buy_items_ary[:this_month])
+    logger.debug("--------------->")
 
     @total_amount_of_month_ary = {}
-    logger.debug("@@@@@@@@@@@@@@@")
-    logger.debug(@month_hash_key)
-    # BuyItem.total_amount_of_month.each do |value|
-    #   @month_hash_key.each do |key|
-    #     @total_amount_of_month_ary[key] = value
-    #   end
-    # end
-    #logger.debug(@total_amount_of_month_ary)
   end
 
   def new

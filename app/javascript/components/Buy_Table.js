@@ -95,13 +95,61 @@ function ListDataView(props) {
   );
 }
 
+function TableDataView(props) {
+  const classes = useStyles();
+  return (
+    <Paper className={classes.root}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+        <TableRow bgcolor="#fff0f5">
+          <TableCell align="center">カテゴリ名</TableCell>
+          <TableCell align="center">商品名</TableCell>
+          <TableCell align="center">金額</TableCell>
+        </TableRow>
+      </TableHead>
+      {/* <TableBody>
+        {props.buy_items_ary['this_month'].map(row => (
+          <TableRow key={row.name}>
+            <TableCell align="center">{row.category_id}</TableCell>
+            <TableCell align="center">{row.name}</TableCell>
+            <TableCell align="center">{row.price}</TableCell>
+          </TableRow>
+        ))} 
+      </TableBody>*/}
+      {props.month_hash_key.map(a_key => (
+          <Table_Body_func buy_items_ary={props.buy_items_ary[a_key]}/>
+      ))}
+      </Table>
+    </Paper> 
+  );
+}
+
+// テーブルのBODY要素を関数化
+function Table_Body_func(props) {
+  return(
+    <TableBody>
+      {props.buy_items_ary.map(row => (
+        <TableRow key={row.name}>
+          <TableCell align="center">{row.category_id}</TableCell>
+          <TableCell align="center">{row.name}</TableCell>
+          <TableCell align="center">{row.price}</TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  )
+}
+
 export default class Buy_Table extends React.Component {
   render() {
+    console.log(this.props)
+    console.log(this.props.month_hash_key)
+    console.log(this.props.buy_items_ary.this_month)
     return (
       <React.Fragment>
         <Container maxWidth="lg">
-          {/*<SimplTable />*/}
-          <ListDataView month_hash_key={this.props.month_hash_key}/>
+          {/*<SimplTable />
+          <ListDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key} />*/}
+          <TableDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key}/>
         </Container>
       </React.Fragment>
     );
