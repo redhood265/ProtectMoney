@@ -24,61 +24,6 @@ function createData(category_name, name, price) {
   return { category_name:category_name, name:name, price:price };
 }
 
-// function SimplTable() {
-//   const classes = useStyles();
-
-//   // this.props.buy_ary
-//   // this.props.month_hash_key
-//   console.log("month_hash_key => ")
-//   console.log(this.props.month_hash_key)
-//   console.log("buy_ary => ")
-//   console.log(this.props.buy_ary)
-
-//   // {month_hash_key.forEach((key) => {
-//   //   buy_ary[key].forEach((val) => {
-//   //     //console.log(val)
-//   //   })
-//   // })}
-
-//   return (
-//     { log(month_hash_key) }
-  
-//     <Paper className={classes.root}>
-//       <Table className={classes.table} aria-label="simple table">
-
-//         <TableHead>
-//           {/*prop.month_ary.buy_month*/ }
-//         </TableHead>
-
-//         <TableHead>
-//           <TableRow bgcolor="#fff0f5">
-//             <TableCell align="center">カテゴリ名</TableCell>
-//             <TableCell align="center">商品名</TableCell>
-//             <TableCell align="center">金額</TableCell>
-//           </TableRow>
-//         </TableHead>
-
-//         <TableBody>
-//           {
-//             /*{rows.map(row => (
-//             <TableRow key={row.name}>
-//               <TableCell align="center">{row.category_name}</TableCell>
-//               <TableCell align="center">{row.name}</TableCell>
-//               <TableCell align="center">{row.price}</TableCell>
-//             </TableRow>
-//           ))}
-//           <TableRow>
-//             <TableCell colSpan="2" align="center">合計金額</TableCell>
-//             <TableCell align="center">{prop.month_ary.month_price}</TableCell>
-//           </TableRow>*/
-//           }
-
-//         </TableBody>
-//       </Table>
-//     </Paper>
-//   );
-// }
-
 function ListDataView(props) {
 
   console.log("this.props => ")
@@ -100,27 +45,26 @@ function TableDataView(props) {
   return (
     <Paper className={classes.root}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+
+      {/* <TableHead>
+        {props.total_amount_of_month_ary[0]}
+      </TableHead> */}
+
+      <TableHead>
         <TableRow bgcolor="#fff0f5">
           <TableCell align="center">カテゴリ名</TableCell>
           <TableCell align="center">商品名</TableCell>
           <TableCell align="center">金額</TableCell>
         </TableRow>
-      </TableHead>
-      {/* <TableBody>
-        {props.buy_items_ary['this_month'].map(row => (
-          <TableRow key={row.name}>
-            <TableCell align="center">{row.category_id}</TableCell>
-            <TableCell align="center">{row.name}</TableCell>
-            <TableCell align="center">{row.price}</TableCell>
-          </TableRow>
-        ))} 
-      </TableBody>*/}
-      {props.month_hash_key.map(a_key => (
+        </TableHead>
+
+        {/* {props.month_hash_key.map(a_key => (
           <Table_Body_func buy_items_ary={props.buy_items_ary[a_key]}/>
-      ))}
+        ))} */}
+        <Table_Body_func buy_items_ary={props.buy_items_ary.this_month}/>
+
       </Table>
-    </Paper> 
+    </Paper>
   );
 }
 
@@ -141,15 +85,16 @@ function Table_Body_func(props) {
 
 export default class Buy_Table extends React.Component {
   render() {
-    console.log(this.props)
-    console.log(this.props.month_hash_key)
-    console.log(this.props.buy_items_ary.this_month)
+
+    // console.log(this.props)
+    // console.log(this.props.month_hash_key)
+    // console.log(this.props.buy_items_ary)
+    // console.log(this.props.total_amount_of_month_ary)
+
     return (
       <React.Fragment>
         <Container maxWidth="lg">
-          {/*<SimplTable />
-          <ListDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key} />*/}
-          <TableDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key}/>
+          <TableDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key} total_amount_of_month_ary={this.props.total_amount_of_month_ary} />
         </Container>
       </React.Fragment>
     );

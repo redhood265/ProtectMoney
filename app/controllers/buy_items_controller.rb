@@ -9,22 +9,15 @@ class BuyItemsController < ApplicationController
     @month_hash_key = [THIS_MONTH, ONE_MONTH_AGO, TWO_MONTH_AGO]
 
     #今月/前月/前々月のデータ取得
-    month_hash_key_value = {
-      this_month: Time.current.all_month,
-      one_month_ago: 1.months.ago.all_month,
-      two_month_ago: 2.months.ago.all_month
-    }
+    month_hash_key_value = {this_month: Time.current.all_month,　one_month_ago: 1.months.ago.all_month, two_month_ago: 2.months.ago.all_month}
 
     @buy_items_ary = {}
     month_hash_key_value.each_key { |key|
       @buy_items_ary[key] = BuyItem.by_month_buy(month_hash_key_value[key]).to_a
     }
 
-    logger.debug("<---------------")
-    logger.debug(@buy_items_ary[:this_month])
-    logger.debug("--------------->")
-
-    @total_amount_of_month_ary = {}
+    @total_amount_of_month_ary = BuyItem.total_amount_of_month
+    #logger.debug(BuyItem.total_amount_of_month)
   end
 
   def new
