@@ -58,10 +58,10 @@ function TableDataView(props) {
         </TableRow>
         </TableHead>
 
-        {/* {props.month_hash_key.map(a_key => (
-          <Table_Body_func buy_items_ary={props.buy_items_ary[a_key]}/>
-        ))} */}
-        <Table_Body_func buy_items_ary={props.buy_items_ary.this_month}/>
+        {props.month_hash_key.map((hash_key) =>
+            <Table_Body_func buy_items_ary={props.buy_items_ary[hash_key]} />
+          )
+        }
 
       </Table>
     </Paper>
@@ -70,7 +70,8 @@ function TableDataView(props) {
 
 // テーブルのBODY要素を関数化
 function Table_Body_func(props) {
-  return(
+  //console.log(props.buy_items_ary)
+  return (
     <TableBody>
       {props.buy_items_ary.map(row => (
         <TableRow key={row.name}>
@@ -88,7 +89,7 @@ export default class Buy_Table extends React.Component {
 
     // console.log(this.props)
     // console.log(this.props.month_hash_key)
-    // console.log(this.props.buy_items_ary)
+    //console.log(this.props.buy_items_ary)
     // console.log(this.props.total_amount_of_month_ary)
 
     return (
