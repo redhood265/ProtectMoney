@@ -46,9 +46,9 @@ function TableDataView(props) {
     <Paper className={classes.root}>
       <Table className={classes.table} aria-label="simple table">
 
-      {/* <TableHead>
-        {props.total_amount_of_month_ary[0]}
-      </TableHead> */}
+      <TableHead>
+        {props.total_amount_of_month_ary.buy_month}
+      </TableHead>
 
       <TableHead>
         <TableRow bgcolor="#fff0f5">
@@ -58,44 +58,48 @@ function TableDataView(props) {
         </TableRow>
         </TableHead>
 
-        {props.month_hash_key.map((hash_key) =>
-            <Table_Body_func buy_items_ary={props.buy_items_ary[hash_key]} />
-          )
-        }
+        <TableBody>
+          {props.buy_items_ary.map(row => (
+            <TableRow key={row.name}>
+              <TableCell align="center">{row.category_id}</TableCell>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.price}</TableCell>
+            </TableRow>
+          ))}
 
+          <TableRow>
+            <TableCell colSpan="2" align="center">合計金額</TableCell>
+            <TableCell align="center">{props.total_amount_of_month_ary.month_price}</TableCell>
+          </TableRow>
+
+        </TableBody>
       </Table>
     </Paper>
   );
 }
 
-// テーブルのBODY要素を関数化
-function Table_Body_func(props) {
-  //console.log(props.buy_items_ary)
-  return (
-    <TableBody>
-      {props.buy_items_ary.map(row => (
-        <TableRow key={row.name}>
-          <TableCell align="center">{row.category_id}</TableCell>
-          <TableCell align="center">{row.name}</TableCell>
-          <TableCell align="center">{row.price}</TableCell>
-        </TableRow>
-      ))}
-    </TableBody>
-  )
-}
+// // テーブルのBODY要素を関数化
+// function Table_Body_func(props) {
+//   //console.log(props.buy_items_ary)
+//   return (
+//   )
+// }
 
 export default class Buy_Table extends React.Component {
   render() {
 
     // console.log(this.props)
-    // console.log(this.props.month_hash_key)
-    //console.log(this.props.buy_items_ary)
-    // console.log(this.props.total_amount_of_month_ary)
+    console.log(this.props.month_hash_key)
+    console.log(this.props.buy_items_ary)
+     console.log(this.props.total_amount_of_month_ary)
 
     return (
       <React.Fragment>
         <Container maxWidth="lg">
-          <TableDataView buy_items_ary={this.props.buy_items_ary} month_hash_key={this.props.month_hash_key} total_amount_of_month_ary={this.props.total_amount_of_month_ary} />
+        {this.props.month_hash_key.map((hash_key,index) =>
+          <TableDataView buy_items_ary={this.props.buy_items_ary[hash_key]} total_amount_of_month_ary={this.props.total_amount_of_month_ary[index]} />
+          )
+        }
         </Container>
       </React.Fragment>
     );

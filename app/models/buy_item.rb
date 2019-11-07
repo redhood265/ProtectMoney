@@ -26,7 +26,7 @@ class BuyItem < ApplicationRecord
     .where(approval: true)
     .order("buy_month")
     .group("buy_month")
-    .map{ |tmp| [tmp.buy_month, tmp.month_price]}
+    .map{ |tmp| {buy_month: tmp.buy_month, month_price: tmp.month_price}}
   }
 
 end
