@@ -1,5 +1,5 @@
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/hpricot-0.8.6/ext/hpricot_scan
-/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191017-1897-1sii5q2.rb extconf.rb
+/Users/bps_saito/.rbenv/versions/2.6.0/bin/ruby -I /Users/bps_saito/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191112-15943-6nsxqg.rb extconf.rb
 checking for main() in -lc... yes
 creating Makefile
 
@@ -27,4 +27,4 @@ linking shared-object hpricot_scan.bundle
 
 current directory: /Users/bps_saito/myLabo/ProtectMoney/vendor/bundle/ruby/2.6.0/gems/hpricot-0.8.6/ext/hpricot_scan
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 hpricot_scan.bundle ./.gem.20191017-1897-1gkdtbf
+/usr/bin/install -c -m 0755 hpricot_scan.bundle ./.gem.20191112-15943-1p75gr5
