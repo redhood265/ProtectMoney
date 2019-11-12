@@ -3,7 +3,7 @@ class BuyItem < ApplicationRecord
   has_many :category
 
   MAX_PRICE = 300000.freeze
-  validates :price, numericality: {only_interger: true, greater_than: MAX_PRICE}
+  validates :price, numericality: {only_interger: true, less_than: MAX_PRICE}
 
   #一覧表示
   scope :by_month_buy,-> (month) {
