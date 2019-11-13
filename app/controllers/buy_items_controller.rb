@@ -12,11 +12,9 @@ class BuyItemsController < ApplicationController
     month_hash.each do |key, value|
       @buy_items_hash[key] = BuyItem.by_month_buy(value)
     end
-
-    @buy_items_hash.each_value do |val|
-      logger.debug(val)
-    end
-
+    # @buy_items_hash.each_value do |val|
+    #   logger.debug(val)
+    # end
   end
 
   def new
