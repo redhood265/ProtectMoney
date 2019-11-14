@@ -10,15 +10,16 @@ Category.create!(name: "家電")
 Category.create!(name: "ゲーム")
 Category.create!(name: "書籍")
 
-BuyItem.create!(category_id: 1, name: "電子レンジ_テスト", price: 24000, approval: true)
-#BuyItem.create!(category_id: 1, name: "洗濯機_テスト", price: 30000, approval: false)
-BuyItem.create!(category_id: 2, name: "KH_テスト", price: 7800, approval: true)
+BuyItem.create!(category_id: 1, name: "電子レンジ", price: 24000, approval: true)
+BuyItem.create!(category_id: 2, name: "KH", price: 7800, approval: true)
 
-BuyItem.create!(category_id: 1, name: "ガスコンロ_テスト", price: 44000, approval: true, created_at: 1.months.ago)
-#BuyItem.create!(category_id: 1, name: "IHコンロ_テスト", price: 66000, approval: false, created_at: 1.months.ago)
-BuyItem.create!(category_id: 2, name: "MH_テスト", price: 3900, approval: true, created_at: 1.months.ago)
+BuyItem.create!(category_id: 1, name: "ガスコンロ", price: 44000, approval: true, created_at: 1.months.ago)
+BuyItem.create!(category_id: 2, name: "MH", price: 3900, approval: true, created_at: 1.months.ago)
 
-#BuyItem.create!(category_id: 1, name: "ルンバ_テスト", price: 45500, approval: true, created_at: 2.months.ago)
-BuyItem.create!(category_id: 1, name: "ディスプレイ_テスト", price: 12000, approval: false, created_at: 2.months.ago)
-BuyItem.create!(category_id: 2, name: "MTG_テスト", price: 2400, approval: true, created_at: 2.months.ago)
+BuyItem.create!(category_id: 1, name: "ディスプレイ", price: 12000, approval: false, created_at: 2.months.ago)
+BuyItem.create!(category_id: 2, name: "MTG", price: 2400, approval: true, created_at: 2.months.ago)
+
+BuyItem.create!(category_id: 1, name: "ルンバ", price: 12000, approval: false, created_at: 3.months.ago)
+BuyItem.create!(category_id: 2, name: "Steam", price: 3600, approval: true, created_at: 3.months.ago)
+
 
