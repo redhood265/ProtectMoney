@@ -30,7 +30,9 @@ class BuyItemsController < ApplicationController
 
   #ログ表示画面
   def log_view
-    @buy_items = BuyItem.all
+    # @buy_items = BuyItem.all
+    @q = BuyItem.ransack(params[:q])
+    @buy_items = @q.result(distinct: true)
   end
 
   #チャート表示画面

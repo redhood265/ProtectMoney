@@ -9,6 +9,7 @@ div.index_btn_area
 
 - @buy_items_hash.each_value do |item|
   div.buy_month_area
+  - unless item.first.nil?
     strong
       = item.first.created_at.strftime("%Y/%m")
 
