@@ -22,7 +22,7 @@ hr
           td = item.price
           td = item.created_at.strftime("%Y/%m")
 
-/ = link_to "一覧へ戻る", buy_items_path, class: 'btn btn-warning'
+= link_to "一覧へ戻る", buy_items_path, class: 'btn btn-warning'
 
 / - unless @buy_items.nil?
 /   .mb-5
