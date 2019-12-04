@@ -24,21 +24,3 @@ hr
 
 = link_to "一覧へ戻る", buy_items_path, class: 'btn btn-warning'
 
-/ - unless @buy_items.nil?
-/   .mb-5
-/   table.table
-/     thead.thead-default
-/       tr
-/         th カテゴリ
-/         th 項目名
-/         th 金額
-/         th 作成日
-/     tbody
-/       - @buy_items.each do |item|
-/         tr
-/           td = Category.find(item.category_id).name ||= ""
-/           td = item.name
-/           td = item.price
-/           td = item.created_at.strftime("%Y/%m")
-
-/ = link_to "一覧へ戻る", buy_items_path, class: 'btn btn-warning'
