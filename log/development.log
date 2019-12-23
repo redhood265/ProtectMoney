@@ -18995,3 +18995,322 @@ Completed 200 OK in 30ms (Views: 9.0ms | ActiveRecord: 2.2ms)
 
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   ↳ vendor/bundle/ruby/2.6.0/bin/rspec:23
+Started GET "/" for 127.0.0.1 at 2019-12-23 12:33:59 +0900
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (4.7ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.5ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.4ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (53.9ms)
+Completed 200 OK in 1430ms (Views: 1381.3ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/buy_items/log_view" for 127.0.0.1 at 2019-12-23 12:34:12 +0900
+Processing by BuyItemsController#log_view as HTML
+  Rendering buy_items/log_view.slim within layouts/application
+  [1m[36mBuyItem Load (2.8ms)[0m  [1m[34mSELECT DISTINCT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/log_view.slim:18
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  Rendered buy_items/log_view.slim within layouts/application (23.8ms)
+Completed 200 OK in 67ms (Views: 50.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:34:16 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (23.1ms)
+Completed 200 OK in 62ms (Views: 56.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-12-23 12:34:17 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/models/category.rb:3
+  Rendered buy_items/new.slim within layouts/application (8.2ms)
+Completed 200 OK in 46ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:34:23 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (14.6ms)
+Completed 200 OK in 90ms (Views: 85.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/buy_items/chart_view" for 127.0.0.1 at 2019-12-23 12:34:24 +0900
+Processing by BuyItemsController#chart_view as HTML
+  [1m[36mBuyItem Load (16.6ms)[0m  [1m[34mSELECT to_char(created_at, 'yyyy-mm') as buy_month, sum(price) as month_price FROM "buy_items" GROUP BY buy_month ORDER BY buy_month[0m
+  ↳ app/controllers/buy_items_controller.rb:40
+  Rendering buy_items/chart_view.slim within layouts/application
+  Rendered buy_items/chart_view.slim within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 25.3ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:34:29 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.4ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (14.7ms)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/buy_items/new" for 127.0.0.1 at 2019-12-23 12:50:24 +0900
+Processing by BuyItemsController#new as HTML
+  Rendering buy_items/new.slim within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/models/category.rb:3
+  Rendered buy_items/new.slim within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:50:25 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (1.1ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (15.1ms)
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/buy_items/log_view" for 127.0.0.1 at 2019-12-23 12:50:27 +0900
+Processing by BuyItemsController#log_view as HTML
+  Rendering buy_items/log_view.slim within layouts/application
+  [1m[36mBuyItem Load (1.1ms)[0m  [1m[34mSELECT DISTINCT "buy_items".* FROM "buy_items"[0m
+  ↳ app/views/buy_items/log_view.slim:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/log_view.slim:20
+  Rendered buy_items/log_view.slim within layouts/application (9.2ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:50:28 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (12.9ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/buy_items/chart_view" for 127.0.0.1 at 2019-12-23 12:50:36 +0900
+Processing by BuyItemsController#chart_view as HTML
+  [1m[36mBuyItem Load (21.1ms)[0m  [1m[34mSELECT to_char(created_at, 'yyyy-mm') as buy_month, sum(price) as month_price FROM "buy_items" GROUP BY buy_month ORDER BY buy_month[0m
+  ↳ app/controllers/buy_items_controller.rb:40
+  Rendering buy_items/chart_view.slim within layouts/application
+  Rendered buy_items/chart_view.slim within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 31.9ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/buy_items" for 127.0.0.1 at 2019-12-23 12:50:37 +0900
+Processing by BuyItemsController#index as HTML
+  Rendering buy_items/index.slim within layouts/application
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-12-01 00:00:00"], ["created_at", "2019-12-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.2ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.3ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-11-01 00:00:00"], ["created_at", "2019-11-30 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  [1m[36mBuyItem Load (0.1ms)[0m  [1m[34mSELECT  "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2 ORDER BY "buy_items"."id" ASC LIMIT $3[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:12
+  [1m[36mBuyItem Load (0.1ms)[0m  [1m[34mSELECT "buy_items".* FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/buy_items/index.slim:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("buy_items"."price") FROM "buy_items" WHERE "buy_items"."created_at" BETWEEN $1 AND $2[0m  [["created_at", "2019-10-01 00:00:00"], ["created_at", "2019-10-31 23:59:59.999999"]]
+  ↳ app/views/buy_items/index.slim:32
+  Rendered buy_items/index.slim within layouts/application (13.6ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 2.5ms)
+
+
